@@ -1,0 +1,13 @@
+{
+        "request":{
+                "method":"GET",
+                "url":"/whatssap"
+        },
+        "response":{
+                "status":200,
+                "body":"Hey! Hello FD",
+                "headers":{
+                        "Content-Type":"text/plain"
+                }
+        }
+}
