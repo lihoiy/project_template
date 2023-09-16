@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Preparing') {
             steps{
-                sh 'ssh root@192.168.140.186 \'apt install nginx -y\''
+                sh 'ssh root@nginx0 \'apt install nginx -y\''
             }
         }
         stage('nginx configure') {
