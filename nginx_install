@@ -1,0 +1,21 @@
+properties([
+    parameters([
+        string(defaultValue: 'Installation', name: 'Playbook Name'),
+        choice(choices: ['Dry-Run','Playbook-deploy'], name: 'Playbook Action')
+    ])
+])
+pipeline {
+    agent any 
+    stages {
+        stage('Preparing') {
+            steps{
+                sh 'ssh root@192.168.140.186 \'apt install nginx -y\''
+            }
+        }
+        stage('nginx configure') {
+            steps{
+                sh 'scp ~/default root@nginx0:/etc/nginx/sites-available/'
+            }
+        }
+    }
+}
